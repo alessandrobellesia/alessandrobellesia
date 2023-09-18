@@ -1,0 +1,36 @@
+name: Publish on NPM and GitHub Packages
+
+on:
+    # Runs on every push to main
+    push:
+        branches:
+            - main
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+    pull-requests: read
+
+# Allow one concurrent deployment
+concurrency:
+    group: 'pages'
+    cancel-in-progress: true
+
+jobs:
+    # Build package and pages
+    build:
+        uses: ./.github/workflows/build.yml
+
+    # Publish to github packages
+    deploy:
+        needs: [build]
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v2

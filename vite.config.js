@@ -13,6 +13,7 @@ import {
 	getPascalCaseRouteName,
 } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
+import generateSitemap from 'vite-ssg-sitemap'
 
 export default defineConfig({
 	resolve: {
@@ -118,14 +119,25 @@ export default defineConfig({
 		}),
 	],
 
+	// https://github.com/antfu/vite-ssg
+	ssgOptions: {
+		script: 'async',
+		formatting: 'minify',
+		onFinished() {
+			generateSitemap({
+				hostname: 'https://alessandrobellesia.github.io',
+				outDir: 'dist',
+			})
+		},
+	},
+
+	ssr: {
+		noExternal: ['@volverjs/ui-vue'],
+	},
+
 	css: {
 		preprocessorOptions: {
 			scss: { additionalData: `@use "./src/assets/scss/settings" as *;` },
 		},
-	},
-
-	optimizeDeps: {
-		include: ['vue', 'vue-router', '@vueuse/core', '@vueuse/head'],
-		exclude: ['@volverjs/ui-vue'],
 	},
 })

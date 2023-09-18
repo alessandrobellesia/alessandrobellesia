@@ -1,45 +1,35 @@
-import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router/auto'
+import { ViteSSG } from 'vite-ssg'
 import { routes } from 'vue-router/auto/routes'
-import { createHead } from '@vueuse/head'
 import App from '~/App.vue'
 import { AppModule } from '~/types'
-import { logger } from './common/Logger'
 
-// install all modules under `modules/`
-const app = createApp(App)
+// https://github.com/antfu/vite-ssg
+export const createApp = ViteSSG(
+	// the root component
+	App,
+	// vue-router options
+	{
+		routes,
+		linkActiveClass: 'selected',
+		linkExactActiveClass: 'current',
+		base: import.meta.env.BASE_URL,
+	},
+	// function to have custom setups
+	({ app, router, head }) => {
+		// setup store (auto-imported from pinia)
+		const store = createPinia()
+		app.use(store)
 
-// setup pages with layouts
-const router = createRouter({
-	history: createWebHistory(),
-	linkActiveClass: 'selected',
-	linkExactActiveClass: 'current',
-})
-app.use(router)
-
-// setup head
-const head = createHead()
-app.use(head)
-
-// setup store (auto-imported from pinia)
-const store = createPinia()
-app.use(store)
-
-// install all modules under `modules/`
-Promise.all(
-	Object.values(
-		import.meta.glob<{ install: AppModule }>('./modules/*.ts', {
-			eager: true,
-		}),
-	).map((i) =>
-		Promise.resolve(i.install?.({ app, router, routes, head, store })),
-	),
+		Promise.all(
+			Object.values(
+				import.meta.glob<{ install: AppModule }>('./modules/*.ts', {
+					eager: true,
+				}),
+			).map((i) =>
+				Promise.resolve(
+					i.install?.({ app, router, routes, head, store }),
+				),
+			),
+		)
+	},
 )
-	.then(() => {
-		logger.log('All modules installed')
-	})
-	.catch((e) => {
-		logger.error(e)
-	})
-
-app.mount('#app')
