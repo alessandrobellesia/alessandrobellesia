@@ -1,13 +1,13 @@
-import { App } from 'vue'
-import { Router, RouteRecordRaw } from 'vue-router/auto'
-import { HeadClient } from '@vueuse/head'
-import { Pinia } from 'pinia'
+import type { App } from 'vue'
+import type { Router, RouteRecordRaw } from 'vue-router/auto'
+import type { MergeHead, VueHeadClient } from '@unhead/vue'
+import type { Pinia } from 'pinia'
 
 interface AppContext<HasRouter extends boolean = true> {
 	app: App<Element>
 	router: HasRouter extends true ? Router : undefined
 	routes: HasRouter extends true ? RouteRecordRaw[] : undefined
-	head: HeadClient | undefined
+	head: VueHeadClient<MergeHead> | undefined
 	store: Pinia
 }
 

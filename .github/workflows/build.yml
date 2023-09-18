@@ -18,16 +18,16 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'pnpm'
 
-            - name: Install dependencies
+            - name: Install Dependencies
               run: pnpm install --no-frozen-lockfile
 
-            - name: Build release
+            - name: SSG build
               run: pnpm build
 
             - name: Setup GitHub Pages
               uses: actions/configure-pages@v2
 
-            - name: Upload styleguide
+            - name: Upload Pages Artifact
               uses: actions/upload-pages-artifact@v1
               with:
                   path: './dist'
