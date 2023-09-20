@@ -35,8 +35,8 @@
 			</VvButtonGroup>
 			<section class="w-10/12 md:w-6/12 xxl:w-4/12 mx-auto mt-lg">
 				<p class="text-balance leading-normal">
-					Lead Front-End Developer con oltre 14 di esperienza nella
-					progettazione, sviluppo e ottimizzazione di interfacce
+					Lead Front-End Developer con oltre 14 anni di esperienza
+					nella progettazione, sviluppo e ottimizzazione di interfacce
 					utente per applicazioni web e mobile. Dimostrata capacità di
 					guidare e ispirare team di sviluppo, stabilire le migliori
 					pratiche e garantire la massima qualità del codice.
