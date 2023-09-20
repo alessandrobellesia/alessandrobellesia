@@ -23,6 +23,7 @@
 					modifiers="primary rounded"
 					target="_blank"
 					icon="akar-icons:download"
+					download
 					href="/cv-alessandro-bellesia.pdf"
 					label="Scarica il CV" />
 				<VvButton
