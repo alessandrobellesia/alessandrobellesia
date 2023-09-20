@@ -18,7 +18,7 @@
 					Lead Front-end Developer
 				</h2>
 			</div>
-			<VvButtonGroup class="no-print">
+			<VvButtonGroup class="no-print mb-md">
 				<VvButton
 					modifiers="primary rounded"
 					target="_blank"
@@ -50,9 +50,9 @@
 				</h3>
 				<ul class="flex flex-col gap-lg">
 					<li class="leading-relaxed">
-						<div class="flex justify-between align-baseline">
+						<div class="flex justify-between align-baseline gap-sm">
 							<span class="font-bold">24/Consulting</span>
-							<span class="text-smaller text-word-3">
+							<span class="text-smaller text-word-3 text-right">
 								Marzo 2022 - In corso
 							</span>
 						</div>
@@ -67,9 +67,9 @@
 						</p>
 					</li>
 					<li class="leading-relaxed">
-						<div class="flex justify-between align-baseline">
+						<div class="flex justify-between align-baseline gap-sm">
 							<span class="font-bold">24/Consulting</span>
-							<span class="text-smaller text-word-3">
+							<span class="text-smaller text-word-3 text-right">
 								Luglio 2017 - Marzo 2022
 							</span>
 						</div>
@@ -85,9 +85,9 @@
 						</p>
 					</li>
 					<li class="leading-relaxed">
-						<div class="flex justify-between align-baseline">
+						<div class="flex justify-between align-baseline gap-sm">
 							<span class="font-bold">WinTrade</span>
-							<span class="text-smaller text-word-3">
+							<span class="text-smaller text-word-3 text-right">
 								Marzo 2015 - Luglio 2017
 							</span>
 						</div>
@@ -99,9 +99,9 @@
 						</p>
 					</li>
 					<li class="leading-relaxed">
-						<div class="flex justify-between align-baseline">
+						<div class="flex justify-between align-baseline gap-sm">
 							<span class="font-bold">IFOA</span>
-							<span class="text-smaller text-word-3">
+							<span class="text-smaller text-word-3 text-right">
 								Marzo 2011 - Marzo 2015
 							</span>
 						</div>
@@ -112,9 +112,9 @@
 						</p>
 					</li>
 					<li class="leading-relaxed">
-						<div class="flex justify-between align-baseline">
+						<div class="flex justify-between align-baseline gap-sm">
 							<span class="font-bold">AN-Soft</span>
-							<span class="text-smaller text-word-3">
+							<span class="text-smaller text-word-3 text-right">
 								Marzo 2011 - Marzo 2015
 							</span>
 						</div>
@@ -126,9 +126,9 @@
 						</p>
 					</li>
 					<li class="leading-relaxed">
-						<div class="flex justify-between align-baseline">
+						<div class="flex justify-between align-baseline gap-sm">
 							<span class="font-bold">Freelance</span>
-							<span class="text-smaller text-word-3">
+							<span class="text-smaller text-word-3 text-right">
 								Gennaio 2009 - Marzo 2011
 							</span>
 						</div>
@@ -149,20 +149,20 @@
 				</h3>
 				<ul class="flex flex-col gap-lg">
 					<li class="leading-relaxed">
-						<div class="flex justify-between align-baseline">
+						<div class="flex justify-between align-baseline gap-sm">
 							<span class="font-bold"
 								>Università degli Studi di Verona</span
 							>
-							<span class="text-smaller text-word-3">
+							<span class="text-smaller text-word-3 text-right">
 								Settembre 2006 - Marzo 2011
 							</span>
 						</div>
 						<div>Laurea in Informatica Multimediale</div>
 					</li>
 					<li class="leading-relaxed">
-						<div class="flex justify-between align-baseline">
+						<div class="flex justify-between align-baseline gap-sm">
 							<span class="font-bold">Liceo Scientifico</span>
-							<span class="text-smaller text-word-3">
+							<span class="text-smaller text-word-3 text-right">
 								Settembre 2001 - Luglio 2006
 							</span>
 						</div>
