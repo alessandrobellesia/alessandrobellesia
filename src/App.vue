@@ -3,11 +3,12 @@
 	import '~/composables/useTheme'
 
 	useHead({
-		title: 'Volver Vue Starter',
+		title: 'Curriculum vitae di Alessandro Bellesia',
 		meta: [
 			{
 				name: 'description',
-				content: 'A Volverjs Template (Vite + Vue) inspired by Vitesse',
+				content:
+					'Lead Front-End Developer con oltre 14 di esperienza nella	progettazione, sviluppo e ottimizzazione di interfacce utente per applicazioni web e mobile.',
 			},
 		],
 	})
